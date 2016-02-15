@@ -17,7 +17,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import livefeeds.apps.dexter.activity.R;
 import livefeeds.apps.dexter.fragment.HomeFragment;
+import livefeeds.apps.dexter.fragment.LoginFragment;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -48,7 +50,7 @@ public class HomeActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         //Show Home Fragment
-        HomeFragment fragment = HomeFragment.newInstance();
+        LoginFragment fragment = LoginFragment.newInstance(new Bundle());
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.fragment_container, fragment, HomeFragment.TAG);
